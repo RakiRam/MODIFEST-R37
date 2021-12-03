@@ -22,10 +22,10 @@ function startRecognization() {
     recognition.interimResults = true;
     recognition.addEventListener('result', (e) => {
         let text = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('');
-
         console.log(text);
         if (e.results[0].isFinal) {
             text = text.toLowerCase()
+            document.getElementById('voicetext').innerHTML = text;
             if (text.includes('nexa') || text.includes('hey nexa') ) {
                 switch (true) {
                     case text.indexOf('open') != -1:
@@ -65,6 +65,12 @@ function startRecognization() {
                     case text.indexOf('help') != -1 || text.indexOf('show commands'):
                         Speek("These are the commands");
                         document.getElementById("help").click();
+                        break
+                    case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1):
+                        if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
+                        {
+                            document.getElementById('logo').src="./images/whooaa.gif";
+                        }
                         break
                     default:
                         Speek('Command not found .. please follow these commands');
