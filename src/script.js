@@ -66,8 +66,8 @@ function startRecognization() {
                         Speek("These are the commands");
                         document.getElementById("help").click();
                         break
-                    case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1):
-                        if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
+                    case (text.indexOf('i am') != -1) || (text.indexOf('iam') )!= -1 ||(text.indexOf('oooh!')) != -1 || (text.indexOf('whooaa')!=-1):
+                        if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') !=1 ))
                         {
                             document.getElementById('logo').src="./images/whooaa.gif";
                         }
