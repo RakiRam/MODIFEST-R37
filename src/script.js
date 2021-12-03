@@ -26,7 +26,7 @@ function startRecognization() {
         console.log(text);
         if (e.results[0].isFinal) {
             text = text.toLowerCase()
-            if (text.includes('nexa') || text.includes('hey nexa') ) {
+            if (text.includes('priya') || text.includes('priya') ) {
                 switch (true) {
                     case text.indexOf('open') != -1:
                         if (text.includes("whatsapp")) {
