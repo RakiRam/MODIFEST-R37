@@ -2,10 +2,16 @@ html,body{
     width: 100%;
     height: 100%;
 }
+body{
+    background-color:rgb(240, 240, 247);
+    background-image: radial-gradient(rgb(203, 211, 247) 15%, transparent 16%),
+    radial-gradient(rgb(232, 236, 247) 15%, transparent 16%);
+    background-size: 30px 30px;
+    background-position: 0 0, 30px 30px;
+}
 .container{
     width: 100%;
     height: 80%;
-    border: 2px solid black;
 }
 .container img{
     display: block;
@@ -17,5 +23,3 @@ html,body{
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
     border-radius: 50%;
 }
-
-
