@@ -19,18 +19,13 @@ body{
     margin-right: auto;
     margin-top: 10rem;
     max-width: 300px;
-    width: 20%;
+    width: 25%;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
     border-radius: 50%;
+    transition: transform .2s;
 }
-.logo:hover {
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 11rem;
-    max-width: 250px;
-    width: 20%;
+.container img:hover {
+    transform: scale(0.9);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
     border-radius: 50%;
 }
