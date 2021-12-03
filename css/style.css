@@ -31,6 +31,6 @@ body{
     margin-top: 11rem;
     max-width: 250px;
     width: 20%;
-    box-shadow: rgba(219, 100, 100, 0.4) 0px 30px 90px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
     border-radius: 50%;
 }
