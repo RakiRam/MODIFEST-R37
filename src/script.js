@@ -66,10 +66,33 @@ function startRecognization() {
                         Speek("These are the commands");
                         document.getElementById("help").click();
                         break
+<<<<<<< Updated upstream
                     case (text.indexOf('i am') != -1) || (text.indexOf('iam') )!= -1 ||(text.indexOf('oooh!')) != -1 || (text.indexOf('whooaa')!=-1):
                         if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') !=1 ))
+=======
+                    case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1 || text.indexOf('its') != -1 || text.indexOf('lets') != -1):
+                        if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
+>>>>>>> Stashed changes
                         {
                             document.getElementById('logo').src="./images/whooaa.gif";
+                        }
+                        else if ( (text.indexOf('angry') != -1)){
+                            document.getElementById('logo').src="./images/angry.gif";
+                        }
+                        else if ( (text.indexOf('funny') != -1)||  (text.indexOf('fun') != -1)){
+                            document.getElementById('logo').src="./images/laugh.gif";
+                        }
+                        else if ( (text.indexOf('cold') != -1) ||  (text.indexOf('cool') != -1)){
+                            document.getElementById('logo').src="./images/cold.gif";
+                        }
+                        else if ( (text.indexOf('hot') != -1) ||  (text.indexOf('warm') != -1)){
+                            document.getElementById('logo').src="./images/hot.gif";
+                        }
+                        else if ( (text.indexOf('sad') != -1) ||  (text.indexOf('unhappy') != -1)){
+                            document.getElementById('logo').src="./images/sad.gif";
+                        }
+                        else if ( (text.indexOf('party') != -1) ||  (text.indexOf('') != -1)){
+                            document.getElementById('logo').src="./images/part.gif";
                         }
                         break
                     default:
