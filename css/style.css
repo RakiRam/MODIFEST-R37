@@ -18,8 +18,25 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 10rem;
-    max-width: 500px;
-    width: 50%;
+    max-width: 300px;
+    width: 20%;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
     border-radius: 50%;
+<<<<<<< Updated upstream
 }
+=======
+}
+.logo:hover {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 11rem;
+    max-width: 250px;
+    width: 20%;
+    box-shadow: rgba(219, 100, 100, 0.4) 0px 30px 90px;
+    border-radius: 50%;
+}
+
+
+>>>>>>> Stashed changes
