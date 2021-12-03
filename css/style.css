@@ -1,72 +1,15 @@
-html, body {
-    height: 100%;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+html,body{
     width: 100%;
-    background: #000;
-  }
-  
-  svg {
-    max-width: 100%;
-  }
-  
-  html, body {
     height: 100%;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: #000;
-  }
-  
-  svg {
-    max-width: 100%;
-  }
-  
-  @-webkit-keyframes logo_kinetics {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes logo_kinetics {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .nexa {
-    height: 100px;
-    position: relative;
-    width: 150px;
-    margin-top: 15rem;
-  }
-  .nexa svg:not(#orbit) {
-    -webkit-animation: logo_kinetics 3s linear infinite normal forwards;
-            animation: logo_kinetics 3s linear infinite normal forwards;
-    position: absolute;
-    top: -75%;
-    left: 0;
-    transform-origin: bottom center;
-  }
-  
-  .logo-title {
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: normal;
-    color: #fff;
-    font-size: 22px;
-    margin-top: 4rem;
-    margin-bottom: 4px;
-  }
-  .container{
+}
+body{
+    background-color:rgb(240, 240, 247);
+    background-image: radial-gradient(rgb(203, 211, 247) 15%, transparent 16%),
+    radial-gradient(rgb(232, 236, 247) 15%, transparent 16%);
+    background-size: 20px 20px;
+    background-position: 0 0, 30px 30px;
+}
+.container{
     width: 100%;
     height: 80%;
 }
@@ -74,11 +17,11 @@ html, body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5rem;
-    max-width: 100px;
-    width: 10%;
+    margin-top: 10rem;
+    max-width: 300px;
+    width: 25%;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-    border-radius: 40%;
+    border-radius: 50%;
     transition: transform .2s;
 }
 .container img:hover {
