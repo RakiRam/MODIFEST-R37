@@ -1,5 +1,5 @@
 let count = 0
-function Animation_Control() {
+function invoke() {
     if(count %2 != 0){
         Speek("voice assistiant shutdown.")
         stopRocket();
@@ -23,17 +23,22 @@ function startRecognization() {
     recognition.addEventListener('result', (e) => {
         let text = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('');
         console.log(text);
-        if (e.results[0].isFinal) {
+        if (e.results[0].isFinal) 
+        {
             text = text.toLowerCase()
             document.getElementById('voicetext').innerHTML = text;
-            if (text.includes('nexa') || text.includes('hey nexa') ) {
-                switch (true) {
+            if (text.includes('nexa') || text.includes('hey nexa') ) 
+            {
+                switch (true)
+                {
                     case text.indexOf('open') != -1:
-                        if (text.includes("whatsapp")) {
+                        if (text.includes("whatsapp")) 
+                        {
                             Speek("opening whatsapp")
                             window.open("https://www.whatsapp.com/","_blank");
                         }
-                        else if (text.includes('instagram') || text.includes('insta') || text.includes('reels')) {
+                        else if (text.includes('instagram') || text.includes('insta') || text.includes('reels')) 
+                        {
                             Speek("Openig Instagram")
                             window.open("https://www.instagram.com/","_blank");
                         }
@@ -66,15 +71,11 @@ function startRecognization() {
                         Speek("These are the commands");
                         document.getElementById("help").click();
                         break
-<<<<<<< Updated upstream
-                    case (text.indexOf('i am') != -1) || (text.indexOf('iam') )!= -1 ||(text.indexOf('oooh!')) != -1 || (text.indexOf('whooaa')!=-1):
-                        if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') !=1 ))
-=======
                     case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1 || text.indexOf('its') != -1 || text.indexOf('lets') != -1):
                         if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
->>>>>>> Stashed changes
                         {
                             document.getElementById('logo').src="./images/whooaa.gif";
+                            Speek("");
                         }
                         else if ( (text.indexOf('angry') != -1)){
                             document.getElementById('logo').src="./images/angry.gif";
