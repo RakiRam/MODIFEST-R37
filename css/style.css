@@ -37,12 +37,12 @@ body{
     padding: 50px;
     font-size: 1.2rem;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 100px;
+    /* margin-right: auto; */
     width: 20%;
     height: 5%;
-    background-color: silver;
-    border: 1px solid rgb(49, 49, 49);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background-color: rgb(166, 193, 255);
+    border: 1px solid rgb(73, 67, 67);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     font-family: 'Roboto Mono', monospace;
 }
