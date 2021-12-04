@@ -74,7 +74,13 @@ function startRecognization() {
                         document.getElementById("help").click();
                         break
                     case text.indexOf('joke') != -1 || text.indexOf('jokes'):
-                        var jokes=[]
+                        var jokes=["What is the most shocking city in the world?Electricity",
+                                    "Why don't some couples go to the gym?Because some relationships don't workout",
+                                    "The right eye said to the left eye, between you and me, something smells",
+                                    "Why did the banker switch careers?  She lost interest",
+                                    "Can a kangaroo jump higher than a house? Of course! Houses can't jump"
+                                ];
+                        
                         break
                     case text.indexOf('weather') != -1 || text.indexOf('climate'):
                         let lon;
@@ -119,19 +125,19 @@ function startRecognization() {
                         if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
                         {
                             document.getElementById('logo').src="./images/whooaa.gif";
-                            Speek("Good to hear that");
+                            Speek("");
                         }
                         else if ( (text.indexOf('angry') != -1)){
                             document.getElementById('logo').src="./images/angry.gif";
-                            Speek('Sometimes, you have to get angry to get things done.');
+                        }
+                        else if ((text.indexOf('funny') != -1)||  (text.indexOf('fun') != -1)){
+                            document.getElementById('logo').src="./images/laugh.gif";
                         }
                         else if ( (text.indexOf('sad') != -1) ||  (text.indexOf('unhappy') != -1)){
                             document.getElementById('logo').src="./images/sad.gif";
-                            Speek("Sorry to hear that I wish I had arms to hug you ")
                         }
-                        else if ( (text.indexOf('party') != -1) ||  (text.indexOf('party time') != -1)){
+                        else if ( (text.indexOf('party') != -1) ||  (text.indexOf('') != -1)){
                             document.getElementById('logo').src="./images/part.gif";
-                            Speek("Let's get this party started");
                         }
                         break
                     default:
