@@ -105,55 +105,100 @@ body{
     transform: translate3d(-50%, -50%, 0) scale(0.01);
     transform-origin: 50% 60%;
   }
-  
-  .circle-2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    z-index: -1;
-  }
-  .circle-2:after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    animation: expand-2 2s infinite;
-    animation-delay: 0.1s;
-    background-color: #d7dde7;
-    content: "";
+  .text_box{
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;;
+    float: center;
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform: translate3d(-50%, -50%, 0) scale(0.01);
-    transform-origin: 50% 50%;
+    height: auto;
   }
-  
-  .copy {
-    font-weight: 200;
-    letter-spacing: 0.02em;
-    position: relative;
-    bottom: -120px;
-    color: rgba(244, 246, 248, 0.815);
+  .text_box p{
+    color: #52FEFE;
+    text-align: center;
+    font-size: x-large;
   }
-  
-  .copy:after {
-    margin-left: 1px;
-    overflow: hidden;
+  .List_button{
+    margin: 0%;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  button{
     display: inline-block;
-    vertical-align: bottom;
-    position: absolute;
-    animation: ellipsis steps(4, end) 1.5s infinite;
-    content: "…";
-    /* ascii code for the ellipsis character */
-    width: 0px;
+    background-color: #f88163;
+    border-radius: 10px;
+    border: 4px double #000000;
+    color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Cabin Sketch', cursive;
+    padding: 20px;
+    width: 90px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
   }
   
-  @keyframes ellipsis {
-    to {
-      width: 16px;
-    }
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all  ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 90%;
   }
+  .popup{
+    width: 70%;
+  }
+}
