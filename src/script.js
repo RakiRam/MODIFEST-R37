@@ -80,7 +80,9 @@ function startRecognization() {
                                     "Why did the banker switch careers?  She lost interest",
                                     "Can a kangaroo jump higher than a house? Of course! Houses can't jump"
                                 ];
-                        
+                            var item = jokes[Math.floor(Math.random()*jokes.length)];
+                            document.getElementById('logo').src="./images/laugh.gif";
+                            Speek(item);
                         break
                     case text.indexOf('weather') != -1 || text.indexOf('climate'):
                         let lon;
