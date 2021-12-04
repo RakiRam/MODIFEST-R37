@@ -26,6 +26,7 @@ function startRecognization() {
         if (e.results[0].isFinal) 
         {
             text = text.toLowerCase()
+            document.getElementById('voicetext').style.display="block";
             document.getElementById('voicetext').innerHTML = text;
             if (text.includes('nexa') || text.includes('hey nexa') ) 
             {
@@ -71,6 +72,21 @@ function startRecognization() {
                         Speek("These are the commands");
                         document.getElementById("help").click();
                         break
+                    case text.indexOf('weather') != -1 || text.indexOf('climate'):
+                        Speek("current temperature is "+wheatherreport()+"degree centigrades ");
+                        if(wheatherreport() < 30)
+                        {
+                            document.getElementById('logo').src="./images/cold.gif";
+                        }
+                        else if(wheatherreport() >= 30)
+                        {
+                            document.getElementById('logo').src="./images/hot.gif";
+                        }
+                        else{
+                            document.getElementById('logo').src="./images/shut.gif";
+                        }
+
+                        break
                     case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1 || text.indexOf('its') != -1 || text.indexOf('lets') != -1):
                         if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
                         {
@@ -82,12 +98,6 @@ function startRecognization() {
                         }
                         else if ( (text.indexOf('funny') != -1)||  (text.indexOf('fun') != -1)){
                             document.getElementById('logo').src="./images/laugh.gif";
-                        }
-                        else if ( (text.indexOf('cold') != -1) ||  (text.indexOf('cool') != -1)){
-                            document.getElementById('logo').src="./images/cold.gif";
-                        }
-                        else if ( (text.indexOf('hot') != -1) ||  (text.indexOf('warm') != -1)){
-                            document.getElementById('logo').src="./images/hot.gif";
                         }
                         else if ( (text.indexOf('sad') != -1) ||  (text.indexOf('unhappy') != -1)){
                             document.getElementById('logo').src="./images/sad.gif";
@@ -112,3 +122,33 @@ function startRecognization() {
 function stopRocket() {
     recognition.stop();
 }
+
+function wheatherreport()
+{
+    let lon;
+    let lat;
+    const kelvin = 273;
+    window.addEventListener("load", () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position);
+        lon = position.coords.longitude;
+        lat = position.coords.latitude;
+        const api = "6d055e39ee237af35ca066f35474e9df";
+        const base =
+    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` +
+    `lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`;
+        fetch(base)
+            .then((response) => {
+            return response.json();
+            })
+            .then((data) => {
+            // console.log(data);
+            let temperature = Math.floor(data.main.temp - kelvin);
+            return temperature;
+            });
+        });
+    }
+    });
+}
+
