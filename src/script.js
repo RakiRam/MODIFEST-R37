@@ -1,4 +1,5 @@
 let count = 0
+var temperature=28
 function invoke() {
     if(count %2 != 0){
         Speek("voice assistiant shutdown.")
@@ -73,12 +74,36 @@ function startRecognization() {
                         document.getElementById("help").click();
                         break
                     case text.indexOf('weather') != -1 || text.indexOf('climate'):
-                        Speek("current temperature is "+wheatherreport()+"degree centigrades ");
-                        if(wheatherreport() < 30)
+                        let lon;
+                        let lat;
+                        const kelvin = 273;
+                        window.addEventListener("load", () => {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition((position) => {
+                            // console.log(position);
+                            lon = position.coords.longitude;
+                            lat = position.coords.latitude;
+                            const api = "6d055e39ee237af35ca066f35474e9df";
+                            const base =
+                        `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` +
+                        `lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`;
+                            fetch(base)
+                                .then((response) => {
+                                return response.json();
+                                })
+                                .then((data) => {
+                                temperature = Math.floor(data.main.temp - kelvin);
+                                console.log(temperature);
+                                });
+                            });
+                        }
+                        });
+                        Speek("current temperature is "+temperature+"degree centigrades ");
+                        if(parseInt(temperature) < 30)
                         {
                             document.getElementById('logo').src="./images/cold.gif";
                         }
-                        else if(wheatherreport() >= 30)
+                        else if(temperature >= 30)
                         {
                             document.getElementById('logo').src="./images/hot.gif";
                         }
@@ -152,6 +177,7 @@ function wheatherreport()
             });
         });
     }
-    });kol
+    });
 }
+
 
