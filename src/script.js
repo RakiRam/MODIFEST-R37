@@ -123,7 +123,7 @@ function startRecognization() {
                         }
 
                         break
-                        case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1 || text.indexOf('its') != -1 || text.indexOf('lets') != -1):
+                        case (text.indexOf('I am feeling') != -1) || (text.indexOf("I am") != -1) || (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1 || text.indexOf('its') != -1 || text.indexOf("it's") != -1 || text.indexOf('lets') != -1):
                             if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
                             {
                                 document.getElementById('logo').src="./images/whooaa.gif";
@@ -138,7 +138,7 @@ function startRecognization() {
                                 Speek("Sorry to hear that I wish I had arms to hug you ")
                             }
                             else if ( (text.indexOf('party') != -1) ||  (text.indexOf('party time') != -1)){
-                                document.getElementById('logo').src="./images/part.gif";
+                                document.getElementById('logo').src="./images/party.gif";
                                 Speek("Let's get this party started");
                             }
                             break
