@@ -121,29 +121,29 @@ function startRecognization() {
                         }
 
                         break
-                    case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1 || text.indexOf('its') != -1 || text.indexOf('lets') != -1):
-                        if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
-                        {
-                            document.getElementById('logo').src="./images/whooaa.gif";
-                            Speek("");
-                        }
-                        else if ( (text.indexOf('angry') != -1)){
-                            document.getElementById('logo').src="./images/angry.gif";
-                        }
-                        else if ((text.indexOf('funny') != -1)||  (text.indexOf('fun') != -1)){
-                            document.getElementById('logo').src="./images/laugh.gif";
-                        }
-                        else if ( (text.indexOf('sad') != -1) ||  (text.indexOf('unhappy') != -1)){
-                            document.getElementById('logo').src="./images/sad.gif";
-                        }
-                        else if ( (text.indexOf('party') != -1) ||  (text.indexOf('') != -1)){
-                            document.getElementById('logo').src="./images/part.gif";
-                        }
-                        break
-                    default:
-                        Speek('Command not found .. please follow these commands');
-                        document.getElementById("help").click();
-                        break
+                        case (text.indexOf('i am') != -1) || (text.indexOf('iam') != -1 || text.indexOf('its') != -1 || text.indexOf('lets') != -1):
+                            if ( (text.indexOf('surprise') != -1)||(text.indexOf('surprised') != -1))
+                            {
+                                document.getElementById('logo').src="./images/whooaa.gif";
+                                Speek("Good to hear that");
+                            }
+                            else if ( (text.indexOf('angry') != -1)){
+                                document.getElementById('logo').src="./images/angry.gif";
+                                Speek('Sometimes, you have to get angry to get things done.');
+                            }
+                            else if ( (text.indexOf('sad') != -1) ||  (text.indexOf('unhappy') != -1)){
+                                document.getElementById('logo').src="./images/sad.gif";
+                                Speek("Sorry to hear that I wish I had arms to hug you ")
+                            }
+                            else if ( (text.indexOf('party') != -1) ||  (text.indexOf('party time') != -1)){
+                                document.getElementById('logo').src="./images/part.gif";
+                                Speek("Let's get this party started");
+                            }
+                            break
+                        default:
+                            Speek('Command not found .. please follow these commands');
+                            document.getElementById("help").click();
+                            break
                 }
             }
         }
