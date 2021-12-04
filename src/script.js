@@ -127,6 +127,10 @@ function wheatherreport()
 {
     let lon;
     let lat;
+    let temperature = document.querySelector(".temp");
+    let summary = document.querySelector(".summary");
+    let loc = document.querySelector(".location");
+    let icon = document.querySelector(".icon");
     const kelvin = 273;
     window.addEventListener("load", () => {
     if (navigator.geolocation) {
@@ -143,12 +147,11 @@ function wheatherreport()
             return response.json();
             })
             .then((data) => {
-            // console.log(data);
-            let temperature = Math.floor(data.main.temp - kelvin);
-            return temperature;
+            console.log(data);
+            temperature.textContent =Math.floor(data.main.temp - kelvin);
             });
         });
     }
-    });
+    });kol
 }
 
